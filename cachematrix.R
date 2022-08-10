@@ -10,17 +10,22 @@ makeCacheMatrix <- function(x = matrix()) {
                 x <<- y
                 INV<<- NULL
         }
-        get<- function() x #function to get matrix x
-        setinver<- function(inverse) INV <<- inverse #set the value of the inverse
-        #matrix in the cache 
-        getinver<- function()INV
+        get<- function() {
+                x
+        } #function to get matrix x
+        setinver<- function(inverse) {
+                INV <<- inverse
+        } #set the value of the inverse matrix in the cache 
+        getinver<- function() {
+                INV
+        }
         
         list(set= set, get= get,
              setinver= setinver, 
              getinver= getinver)
 }
 
-
+#set: takes an argument and do sth inside it
 
 
 #solve function: return inverse matrix
@@ -51,9 +56,15 @@ makeVector <- function(x = numeric()) {
                 x <<- y
                 m <<- NULL
         }
-        get <- function() x
-        setmean <- function(mean) m <<- mean
-        getmean <- function() m
+        get <- function() {
+                x
+        }
+        setmean <- function(mean) {
+                m <<- mean
+        }
+        getmean <- function() {
+                m
+        }
         list(set = set, get = get,
              setmean = setmean,
              getmean = getmean)
