@@ -5,7 +5,7 @@
 library(MASS)
 #creates a special matrix that cache its inverse
 makeCacheMatrix <- function(x = matrix()) {
-        inver<- NULL  #initialize inverse as Null
+        INV<- NULL  #initialize inverse as Null
         set<- function(y){
                 x <<- y
                 INV<<- NULL
@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
         get<- function() x #function to get matrix x
         setinver<- function(inverse) INV <<- inverse #set the value of the inverse
         #matrix in the cache 
-        getinver<- function() INV
+        getinver<- function()INV
         
         list(set= set, get= get,
              setinver= setinver, 
